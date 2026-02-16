@@ -2610,8 +2610,7 @@ blockquote {
 }
 
 /* Subtle Parallax Effect on Scroll */
-.hero,
-.page-header {
+.hero {
     background-attachment: fixed;
 }
 
