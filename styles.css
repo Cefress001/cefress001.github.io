@@ -189,7 +189,7 @@ em {
 }
 
 .logo-img {
-    height: 200px;
+    height: 250px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -741,7 +741,7 @@ em {
 }
 
 .footer-logo-img {
-    height: 120px;
+    height: 250px;
     width: auto;
 }
 
@@ -778,9 +778,13 @@ em {
 
 .footer-links a,
 .footer-contact a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
     transition: color 0.3s ease;
+}
+
+.footer-contact a:visited {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .footer-links a:hover,
@@ -1321,6 +1325,7 @@ a:focus-visible {
 
 /* ===== Page Header ===== */
 .page-header {
+    margin-top: 100px;
     background-color: var(--primary);
     color: white;
     padding: 8rem 0 4rem 0;
@@ -2409,4 +2414,316 @@ blockquote::before {
     color: var(--text-light);
     margin-top: 0.5rem;
     font-weight: 600;
+}
+
+
+/* ===================================
+   VISUAL ENHANCEMENTS
+   =================================== */
+
+/* Subtle Background Pattern */
+body {
+    background-image: 
+        linear-gradient(45deg, rgba(197, 160, 89, 0.02) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(197, 160, 89, 0.02) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(197, 160, 89, 0.02) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(197, 160, 89, 0.02) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+}
+
+/* Decorative Section Dividers */
+section::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 0 auto 3rem;
+    border-radius: 2px;
+}
+
+section:first-of-type::before {
+    display: none;
+}
+
+/* Enhanced Card Shadows with Glow */
+.feature-card,
+.service-item,
+.value-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::after,
+.service-item::after,
+.value-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.feature-card:hover::after,
+.service-item:hover::after,
+.value-item:hover::after {
+    opacity: 1;
+}
+
+/* Animated Gradient Backgrounds for Sections */
+.mission-section,
+.philosophy-section,
+.boutique-section {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F7FAFC 50%, #FFFFFF 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Decorative Corner Accents */
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--accent) 0%, 
+        transparent 20%, 
+        transparent 80%, 
+        var(--accent) 100%
+    );
+}
+
+/* Enhanced Button Glow Effect */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Floating Animation for Icons */
+.feature-icon,
+.badge svg {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Shimmer Effect on Headings */
+.section-title {
+    background: linear-gradient(
+        90deg,
+        var(--primary) 0%,
+        var(--accent) 50%,
+        var(--primary) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Decorative Quote Marks for Blockquotes */
+blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--accent);
+    opacity: 0.3;
+    position: absolute;
+    top: -1rem;
+    left: 0.5rem;
+    line-height: 1;
+}
+
+blockquote {
+    position: relative;
+    padding-left: 3.5rem;
+}
+
+/* Enhanced Process Steps with Numbers */
+.process-step {
+    position: relative;
+    padding-left: 5rem;
+}
+
+.process-step::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent) 0%, #D4B76A 100%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.3);
+}
+
+/* Subtle Parallax Effect on Scroll */
+.hero,
+.page-header {
+    background-attachment: fixed;
+}
+
+/* Enhanced Testimonial Cards */
+.testimonial-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F7FAFC 100%);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--accent), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+/* Glowing Stat Numbers */
+.stat-number {
+    text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+/* Enhanced Navigation with Gradient Underline */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), #D4B76A);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Decorative Background Shapes */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Enhanced Footer with Gradient Border */
+.footer {
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--accent), transparent) 1;
+}
+
+/* Smooth Page Transitions */
+main {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced List Items with Icons */
+main ul li {
+    position: relative;
+    padding-left: 2rem;
+}
+
+main ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .process-step::before {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .process-step {
+        padding-left: 4rem;
+    }
 }
