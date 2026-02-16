@@ -3063,3 +3063,285 @@ main ul li::before {
     background-position: center;
     background-size: cover;
 }
+
+/* ===== Enhanced Services Page Styles ===== */
+.services-enhanced {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+}
+
+.services-enhanced .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 4rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Service Card Styles */
+.service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(197, 160, 89, 0.2);
+    border-color: var(--accent);
+}
+
+.service-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent) 0%, #D4A574 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-content h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.service-tagline {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.service-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4A5568;
+    margin-bottom: 2rem;
+}
+
+.service-details {
+    background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.service-details h4 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    color: #2D3748;
+}
+
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.service-list li strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.service-ideal-for {
+    background: linear-gradient(135deg, rgba(197, 160, 89, 0.1) 0%, rgba(197, 160, 89, 0.05) 100%);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.service-ideal-for h4 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.service-ideal-for p {
+    margin: 0;
+    line-height: 1.7;
+    color: #2D3748;
+}
+
+/* Care Levels Section */
+.care-levels-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1B2A41 0%, #0A2540 100%);
+    color: white;
+}
+
+.care-levels-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.care-levels-section .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.care-levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.care-level-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.care-level-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(197, 160, 89, 0.3);
+}
+
+.care-level-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent) 0%, #D4A574 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.care-level-card h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.care-level-card > p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.care-level-indicators {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.care-level-indicators li {
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.care-level-indicators li::before {
+    content: "✓ ";
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Responsive Design for Services */
+@media (max-width: 968px) {
+    .service-card {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.75rem;
+    }
+    
+    .services-enhanced .section-title {
+        font-size: 2rem;
+    }
+    
+    .care-levels-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .service-details,
+    .service-ideal-for {
+        padding: 1rem;
+    }
+    
+    .services-enhanced .section-title,
+    .care-levels-section .section-title {
+        font-size: 1.75rem;
+    }
+}
