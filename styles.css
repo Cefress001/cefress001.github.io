@@ -189,7 +189,7 @@ em {
 }
 
 .logo-img {
-    height: 90px;
+    height: 150px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -1029,7 +1029,7 @@ em {
     
     /* Logo size on mobile */
     .logo-img {
-        height: 55px;
+        height: 100px;
     }
     
     /* Hero buttons */
@@ -1124,7 +1124,7 @@ em {
     }
     
     .logo-img {
-        height: 50px;
+        height: 90px;
     }
     
     .btn {
