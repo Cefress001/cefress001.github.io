@@ -1329,11 +1329,12 @@ a:focus-visible {
 .page-header {
     margin-top: 70px;
     padding-top: 8rem;
-    background-color: var(--primary);
     color: white;
     padding-bottom: 8rem;
     text-align: center;
     position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
 .page-header h1 {
