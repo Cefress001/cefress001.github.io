@@ -113,35 +113,48 @@ em {
     background-color: var(--accent);
     color: white;
     border-color: var(--accent);
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
 }
 
 .btn-primary:hover {
     background-color: #B39048;
     border-color: #B39048;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(197, 160, 89, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
 }
 
 .btn-outline {
     background-color: transparent;
     color: var(--primary);
     border-color: var(--primary);
+    box-shadow: 0 2px 10px rgba(27, 42, 65, 0.1);
 }
 
 .btn-outline:hover {
     background-color: var(--primary);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 42, 65, 0.2);
 }
 
 .btn-outline-light {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
     border-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline-light:hover {
     background-color: white;
     color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-lg {
@@ -176,8 +189,13 @@ em {
 }
 
 .logo-img {
-    height: 50px;
+    height: 70px;
     width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .logo-text {
@@ -381,19 +399,27 @@ em {
 .feature-card {
     background-color: white;
     padding: 2.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+    color: #B39048;
 }
 
 .feature-icon {
     color: var(--accent);
     margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .feature-card h4 {
@@ -534,19 +560,27 @@ em {
 .service-card {
     background-color: white;
     padding: 2.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+    color: #B39048;
 }
 
 .service-icon {
     color: var(--accent);
     margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .service-card h4 {
@@ -787,6 +821,7 @@ em {
 @media (max-width: 968px) {
     .hamburger {
         display: flex;
+        z-index: 1001;
     }
     
     .nav-menu {
@@ -794,15 +829,32 @@ em {
         top: 80px;
         left: -100%;
         width: 100%;
+        height: calc(100vh - 80px);
         flex-direction: column;
         background-color: white;
         padding: 2rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: left 0.3s ease;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        z-index: 1000;
     }
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .nav-link {
+        padding: 1rem 0;
+        font-size: 1.125rem;
+        border-bottom: 1px solid var(--sand);
+    }
+    
+    .nav-menu .btn {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 1.25rem 2rem;
+        font-size: 1.125rem;
     }
     
     .process-container {
@@ -940,4 +992,216 @@ em {
         max-width: 300px;
         margin: 0 auto;
     }
+}
+
+
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    /* Container padding */
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    /* Section padding */
+    section {
+        padding: 4rem 0 !important;
+    }
+    
+    /* Logo size on mobile */
+    .logo-img {
+        height: 55px;
+    }
+    
+    /* Hero buttons */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        padding: 1.25rem 2rem;
+    }
+    
+    /* Trust badges */
+    .trust-badges {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .trust-badge {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    /* Feature and service grids */
+    .features-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Process steps */
+    .process-steps {
+        gap: 2rem;
+    }
+    
+    .process-step {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Testimonial carousel */
+    .testimonial-carousel {
+        padding: 0 1rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1.125rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* CTA buttons */
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer-logo-img {
+        height: 50px;
+    }
+    
+    /* Stat badge */
+    .stat-badge {
+        padding: 2rem 2.5rem;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.875rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .feature-card,
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn {
+        min-height: 48px;
+        padding: 1rem 2rem;
+    }
+    
+    .nav-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .carousel-btn {
+        min-width: 48px;
+        min-height: 48px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .feature-card:hover,
+    .service-card:hover {
+        transform: none;
+    }
+    
+    /* Tap highlight color */
+    * {
+        -webkit-tap-highlight-color: rgba(197, 160, 89, 0.2);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-outline,
+    .btn-outline-light {
+        border-width: 3px;
+    }
+    
+    .feature-card,
+    .service-card {
+        border-width: 2px;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+.btn:focus-visible,
+.nav-link:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
 }
