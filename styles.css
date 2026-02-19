@@ -273,12 +273,15 @@ em {
     background-position: center 30%;
 }
 
-@media (max-width: 768px){
-  .hero-team{
-    background-size: contain;
-    background-position: center;
-    background-color: #000; /* or your page background */
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100vh; /* Let it scale to screen height */
+    background-size: contain; /* Prevent aggressive cropping */
+    background-position: top center; /* Show top of image */
+    background-repeat: no-repeat;
   }
+
 }
 
 .hero-overlay {
