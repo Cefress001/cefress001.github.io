@@ -268,7 +268,8 @@ em {
 
 .hero-team {
     background-image: url('team-photo.png');
-    background-size: 110%;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center 30%;
 }
 
